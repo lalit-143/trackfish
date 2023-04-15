@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Website</title>
+    <style>
+        /* Your CSS code goes here */
+        #external-website-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#external-website-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+    </style>
+</head>
+<body>
+    <div id="external-website-container">
+        <input type="text" id="urlInput" value="{{myurl}}" hidden>
+        <iframe id="external-website-iframe" ></iframe>
+    </div>
+
+    <script>
+        // Your JavaScript code goes here
+        var myurl = document.getElementById("urlInput").value;
+        const iframe = document.querySelector('#external-website-iframe');
+        iframe.src = myurl;
+
+    </script>
+</body>
+</html>
